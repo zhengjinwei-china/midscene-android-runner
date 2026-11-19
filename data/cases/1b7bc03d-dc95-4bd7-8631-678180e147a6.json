@@ -1,0 +1,26 @@
+{
+  "id": "1b7bc03d-dc95-4bd7-8631-678180e147a6",
+  "name": "关闭返回详情页并查看周边商户",
+  "raw": "操作：从上一子案例结束时的页面继续（图片能正常打开）。不要重新打开应用，不要回到桌面。关闭回到门店详情页\n断言：回到门店详情页\n操作：点击周边\n断言：展示周边商户列表",
+  "steps": [
+    {
+      "type": "action",
+      "instruction": "从上一子案例结束时的页面继续（图片能正常打开）。不要重新打开应用，不要回到桌面。关闭回到门店详情页"
+    },
+    {
+      "type": "assert",
+      "instruction": "回到门店详情页"
+    },
+    {
+      "type": "action",
+      "instruction": "点击周边"
+    },
+    {
+      "type": "assert",
+      "instruction": "展示周边商户列表"
+    }
+  ],
+  "sourceCaseId": "08cae70a-9ac9-48c9-9dc3-ab558bdfd4cd",
+  "splitOrder": 10,
+  "updatedAt": "2026-10-30T02:45:59.328Z"
+}

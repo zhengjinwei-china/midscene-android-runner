@@ -1,0 +1,200 @@
+{
+  "id": "877f822f-55bc-42c0-80e9-69f1bb3f7ab7",
+  "name": "建行生活-智慧食堂全流程",
+  "raw": "-打开建行生活app -底部tab选择我的进入我的频道 -找到智慧食堂楼层卡片，点击付款码可以打开二维码-再点击使用离线码旁边的圆圈则展示离线码-再点击二维码以外的区域可以关闭二维码-然后点击智慧食堂楼层闭眼图标，可以将脱敏的余额信息展示出来 -点击食堂楼层右侧向右箭头可以进入智慧食堂首页，首页信息内容都正常展示 -点击交易明细可以看到交易信息 -筛选时间为2026年9月，可以看到2026年9月的交易明细 -再点击收入可以看到收入信息 -切换时间为2026年8月，可以看到2026年8月的收入信息 -再点击支出，可以看到支出信息 -切换时间为2026年7月，可以看到2026年7月的支出信息 -点击左上角返回，回到食堂首页-往下滑动可以看到全部商家和跨机构商家 -点击跨机构商家可以看到下方商户有所变化-点击底部订单tab可以进入订单列表-点击全部时间筛选为近一周，可以展示为近一周的时间 -再次点击时间筛选区域更改为近一个月，向下滑动4屏，可以确认订单时间都在1个月内 -然后点击全部状态，筛选支付成功订单，可以展示出支付成功的订单 -点击第一个订单进入详情展示正常 -再点击订单信息更多按钮，可以展示出下单时间、支付时间、订单号等 -再点击下载消费凭证，可以出现一个带水印的消费凭证弹窗-点击确认可以保存图片到本地",
+  "steps": [
+    {
+      "type": "action",
+      "instruction": "在桌面点击建行生活图标打开应用"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认建行生活首页已加载完成，页面有内容，无白屏或闪退"
+    },
+    {
+      "type": "action",
+      "instruction": "点击底部“我的”tab"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认已进入“我的”频道，页面内容正常展示"
+    },
+    {
+      "type": "action",
+      "instruction": "在“我的”频道找到智慧食堂楼层卡片，点击其中的“付款码”"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认已弹出付款二维码，二维码图像清晰可见"
+    },
+    {
+      "type": "action",
+      "instruction": "点击“使用离线码”旁边的圆圈"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认当前展示的是离线码"
+    },
+    {
+      "type": "action",
+      "instruction": "点击二维码以外的区域"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认二维码已关闭，回到“我的”频道页面"
+    },
+    {
+      "type": "action",
+      "instruction": "点击智慧食堂楼层卡片上的闭眼图标"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认余额信息已由脱敏状态变为展示状态"
+    },
+    {
+      "type": "action",
+      "instruction": "点击智慧食堂楼层卡片右侧的向右箭头"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认已进入智慧食堂首页，首页各楼层与信息正常展示，无空白或加载失败提示"
+    },
+    {
+      "type": "action",
+      "instruction": "在智慧食堂首页点击“交易明细”"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认已进入交易明细页面，交易列表正常展示"
+    },
+    {
+      "type": "action",
+      "instruction": "点击时间筛选，选择2026年9月并确认"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认交易明细列表展示的是2026年9月的交易记录"
+    },
+    {
+      "type": "action",
+      "instruction": "点击“收入”筛选"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认列表展示的是收入类交易信息"
+    },
+    {
+      "type": "action",
+      "instruction": "点击时间筛选，切换为2026年8月并确认"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认列表展示的是2026年8月的收入交易信息"
+    },
+    {
+      "type": "action",
+      "instruction": "点击“支出”筛选"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认列表展示的是支出类交易信息"
+    },
+    {
+      "type": "action",
+      "instruction": "点击时间筛选，切换为2026年7月并确认"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认列表展示的是2026年7月的支出交易信息"
+    },
+    {
+      "type": "action",
+      "instruction": "点击左上角返回按钮"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认已回到智慧食堂首页，页面内容正常展示"
+    },
+    {
+      "type": "action",
+      "instruction": "在智慧食堂首页向下滑动页面"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认可以看到“全部商家”和“跨机构商家”区域"
+    },
+    {
+      "type": "action",
+      "instruction": "点击“跨机构商家”"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认下方商户列表内容发生了变化，展示跨机构商户"
+    },
+    {
+      "type": "action",
+      "instruction": "点击底部“订单”tab"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认已进入订单列表页面，订单列表正常展示"
+    },
+    {
+      "type": "action",
+      "instruction": "点击“全部时间”筛选，选择“近一周”"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认筛选后订单列表展示的是近一周的订单，时间范围正确"
+    },
+    {
+      "type": "action",
+      "instruction": "再次点击时间筛选区域，更改为“近一个月”，然后向下滑动4屏浏览订单列表"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认列表中所有订单时间均在近一个月内"
+    },
+    {
+      "type": "action",
+      "instruction": "点击“全部状态”筛选，选择“支付成功”"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认列表展示的均为支付成功的订单"
+    },
+    {
+      "type": "action",
+      "instruction": "点击列表中的第一个订单"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认已进入订单详情页，详情内容正常展示"
+    },
+    {
+      "type": "action",
+      "instruction": "点击订单信息区域的“更多”按钮"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认展示出下单时间、支付时间、订单号等订单信息"
+    },
+    {
+      "type": "action",
+      "instruction": "点击“下载消费凭证”"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认弹出一个带水印的消费凭证弹窗"
+    },
+    {
+      "type": "action",
+      "instruction": "在消费凭证弹窗中点击“确认”"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认图片已保存到本地，出现保存成功的提示"
+    }
+  ],
+  "updatedAt": "2026-10-30T06:59:40.497Z"
+}

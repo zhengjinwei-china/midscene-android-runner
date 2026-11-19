@@ -1,0 +1,48 @@
+{
+  "id": "b6cc087f-f81b-4846-a002-3dbcb4ab8365",
+  "name": "建行生活充值爱奇艺月卡并进入收银台",
+  "raw": "1、打开建行生活app 2、进入首页金刚区的充值icon 3、点击爱奇艺月卡 4、点击立即充值 5、跳转到下单页点击立即充值 6、确认充值后跳转到收银台7、收银台加载成功无异常后点击返回两次回到充值中心首页",
+  "steps": [
+    {
+      "type": "action",
+      "instruction": "在桌面点击建行生活图标打开应用"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认建行生活首页已加载，金刚区图标正常展示，无闪退或白屏"
+    },
+    {
+      "type": "action",
+      "instruction": "点击首页金刚区中的“充值”图标"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认已进入充值中心首页，页面内容正常展示，无报错或空白"
+    },
+    {
+      "type": "action",
+      "instruction": "在充值中心找到并点击“爱奇艺月卡”"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认已进入爱奇艺月卡充值页面，页面展示正常，可见“立即充值”按钮"
+    },
+    {
+      "type": "action",
+      "instruction": "点击“立即充值”"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认已跳转到收银台页面，收银台加载成功、无异常提示"
+    },
+    {
+      "type": "action",
+      "instruction": "在收银台连续点击返回两次"
+    },
+    {
+      "type": "assert",
+      "instruction": "确认已回到充值中心首页，页面内容展示正常无异常"
+    }
+  ],
+  "updatedAt": "2026-10-21T09:15:10.321Z"
+}

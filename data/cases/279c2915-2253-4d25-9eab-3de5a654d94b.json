@@ -1,0 +1,26 @@
+{
+  "id": "279c2915-2253-4d25-9eab-3de5a654d94b",
+  "name": "进入商超页面且展示正常",
+  "raw": "操作：打开建行生活app，等待首页加载完成\n断言：建行生活app首页已加载，显示金刚区等主要内容，无明显闪退或白屏\n操作：点击首页金刚区的商超icon\n断言：成功进入商超频道，页面展示正常，有商户列表或相关内容",
+  "steps": [
+    {
+      "type": "action",
+      "instruction": "打开建行生活app，等待首页加载完成"
+    },
+    {
+      "type": "assert",
+      "instruction": "建行生活app首页已加载，显示金刚区等主要内容，无明显闪退或白屏"
+    },
+    {
+      "type": "action",
+      "instruction": "点击首页金刚区的商超icon"
+    },
+    {
+      "type": "assert",
+      "instruction": "成功进入商超频道，页面展示正常，有商户列表或相关内容"
+    }
+  ],
+  "sourceCaseId": "ff058efe-30eb-4d01-9bd0-1abfbc1322fa",
+  "splitOrder": 1,
+  "updatedAt": "2026-10-30T06:27:47.986Z"
+}

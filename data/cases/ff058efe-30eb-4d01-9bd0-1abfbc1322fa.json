@@ -1,0 +1,88 @@
+{
+  "id": "ff058efe-30eb-4d01-9bd0-1abfbc1322fa",
+  "name": "建行生活商超频道筛选与商户详情检查",
+  "raw": "-打开建行生活app -进入首页金刚区的商超icon -在筛选栏第一个筛选1000米，向下滑动检查商户是否都满足1000米距离  -筛选栏第四个筛选买单，商户列表右边出现橙色买单标识 -筛选栏第四个筛选数字人民币商户，商户列表右边出现红色数字人民币标识  -将筛选栏第四个选为全部并且筛选栏第2个类型筛选超市时，出现超市相关商户-搜索美宜佳-进入任意美宜佳门店-加载出商户详情页后点击周边可以展示周边商户 -向下滑动可以看到商家信息、和周边推荐门店，均没有异常的文字和图片",
+  "steps": [
+    {
+      "type": "action",
+      "instruction": "打开建行生活app，等待首页加载完成"
+    },
+    {
+      "type": "assert",
+      "instruction": "建行生活app首页已加载，显示金刚区等主要内容，无明显闪退或白屏"
+    },
+    {
+      "type": "action",
+      "instruction": "点击首页金刚区的商超icon"
+    },
+    {
+      "type": "assert",
+      "instruction": "成功进入商超频道，页面展示正常，有商户列表或相关内容"
+    },
+    {
+      "type": "action",
+      "instruction": "在筛选栏第一个筛选条件选择1000米，向下滑动商户列表"
+    },
+    {
+      "type": "assert",
+      "instruction": "商户列表更新，所有商户距离均满足1000米以内"
+    },
+    {
+      "type": "action",
+      "instruction": "在筛选栏第四个筛选条件选择买单"
+    },
+    {
+      "type": "assert",
+      "instruction": "商户列表更新，商户列表右侧出现橙色买单标识"
+    },
+    {
+      "type": "action",
+      "instruction": "在筛选栏第四个筛选条件选择数字人民币商户"
+    },
+    {
+      "type": "assert",
+      "instruction": "商户列表更新，商户列表右侧出现红色数字人民币标识"
+    },
+    {
+      "type": "action",
+      "instruction": "将筛选栏第四个筛选条件选为全部，筛选栏第二个类型筛选超市"
+    },
+    {
+      "type": "assert",
+      "instruction": "出现超市相关商户，商户列表正常展示"
+    },
+    {
+      "type": "action",
+      "instruction": "点击搜索框，输入'美宜佳'，执行搜索"
+    },
+    {
+      "type": "assert",
+      "instruction": "搜索结果显示美宜佳相关商户列表"
+    },
+    {
+      "type": "action",
+      "instruction": "点击任意一个美宜佳门店"
+    },
+    {
+      "type": "assert",
+      "instruction": "成功进入商户详情页，页面加载完成，展示商户信息"
+    },
+    {
+      "type": "action",
+      "instruction": "在商户详情页点击周边"
+    },
+    {
+      "type": "assert",
+      "instruction": "展示周边商户列表，页面正常"
+    },
+    {
+      "type": "action",
+      "instruction": "向下滑动商户详情页"
+    },
+    {
+      "type": "assert",
+      "instruction": "可以看到商家信息和周边推荐门店，文字和图片均无异常"
+    }
+  ],
+  "updatedAt": "2026-10-30T06:19:33.229Z"
+}

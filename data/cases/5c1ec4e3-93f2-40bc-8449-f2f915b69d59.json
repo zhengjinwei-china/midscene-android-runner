@@ -1,0 +1,88 @@
+{
+  "id": "5c1ec4e3-93f2-40bc-8449-f2f915b69d59",
+  "name": "建行生活充值中心回归",
+  "raw": "1、打开建行生活app 2、进入首页金刚区文字为充值的icon 3、点击爱奇艺月卡 4、点击立即充值 5、跳转到下单页点击立即充值 6、确认充值后跳转到收银台7、收银台加载成功无异常后点击返回1次回到下单页8、再点击一次回到充值中心首页，确认回到首页后执行下一步 9、点击充值记录 10、点击最上面一条订单右侧的取消订单按钮 11、确认订单状态改为已取消 12、点击返回按钮回到充值中心首页 13、点击常见问题检查页面是否正常跳转 14、点击点击返回按钮回到充值中心首页 15、点击隐私管理检查页面是否正常跳转",
+  "steps": [
+    {
+      "type": "action",
+      "instruction": "打开建行生活app，等待首页加载完成后，点击首页金刚区文字为'充值'的icon"
+    },
+    {
+      "type": "assert",
+      "instruction": "已成功进入充值中心首页，页面展示正常，核心区域有内容，无全屏错误或空白"
+    },
+    {
+      "type": "action",
+      "instruction": "在充值中心首页，点击爱奇艺月卡，然后点击'立即充值'按钮进入下单页"
+    },
+    {
+      "type": "assert",
+      "instruction": "已成功进入下单页，页面展示正常"
+    },
+    {
+      "type": "action",
+      "instruction": "在下单页点击'立即充值'按钮，确认充值后跳转到收银台"
+    },
+    {
+      "type": "assert",
+      "instruction": "收银台加载成功，无异常"
+    },
+    {
+      "type": "action",
+      "instruction": "收银台加载成功后，点击返回按钮1次回到下单页"
+    },
+    {
+      "type": "assert",
+      "instruction": "已回到下单页，页面展示正常"
+    },
+    {
+      "type": "action",
+      "instruction": "再次点击返回按钮回到充值中心首页"
+    },
+    {
+      "type": "assert",
+      "instruction": "已回到充值中心首页，页面展示正常"
+    },
+    {
+      "type": "action",
+      "instruction": "在充值中心首页，点击'充值记录'，然后点击最上面一条订单右侧的'取消订单'按钮"
+    },
+    {
+      "type": "assert",
+      "instruction": "订单状态已改为'已取消'"
+    },
+    {
+      "type": "action",
+      "instruction": "点击返回按钮回到充值中心首页"
+    },
+    {
+      "type": "assert",
+      "instruction": "已回到充值中心首页，页面展示正常"
+    },
+    {
+      "type": "action",
+      "instruction": "点击'常见问题'"
+    },
+    {
+      "type": "assert",
+      "instruction": "已成功跳转到常见问题页面，页面展示正常"
+    },
+    {
+      "type": "action",
+      "instruction": "点击返回按钮回到充值中心首页"
+    },
+    {
+      "type": "assert",
+      "instruction": "已回到充值中心首页，页面展示正常"
+    },
+    {
+      "type": "action",
+      "instruction": "点击'隐私管理'"
+    },
+    {
+      "type": "assert",
+      "instruction": "已成功跳转到隐私管理页面，页面展示正常"
+    }
+  ],
+  "updatedAt": "2026-10-28T09:52:40.563Z"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "61adc7a2-66c6-416d-a2ec-df3931b6ad1e",
+  "name": "建行生活取消充值订单",
+  "raw": "1、打开建行生活app 2、进入首页金刚区的充值icon 3、点击充值记录 4、点击最上面一条订单右边的取消订单按钮 5、确认订单状态改为已取消。",
+  "steps": [
+    {
+      "type": "action",
+      "instruction": "在桌面点击建行生活 App 图标打开应用",
+      "skipOnBatchContinue": true
+    },
+    {
+      "type": "assert",
+      "instruction": "建行生活首页已加载，金刚区及各功能区正常显示，无白屏或闪退",
+      "skipOnBatchContinue": true
+    },
+    {
+      "type": "action",
+      "instruction": "点击首页金刚区的「充值」图标",
+      "skipOnBatchContinue": true
+    },
+    {
+      "type": "assert",
+      "instruction": "已进入充值页面，页面内容正常显示，无全屏空白或加载失败提示",
+      "skipOnBatchContinue": true
+    },
+    {
+      "type": "action",
+      "instruction": "点击充值页面中的「充值记录」"
+    },
+    {
+      "type": "assert",
+      "instruction": "已进入充值记录页面，订单列表正常展示，至少有一条订单记录"
+    },
+    {
+      "type": "action",
+      "instruction": "点击最上面一条订单右侧的「取消订单」按钮"
+    },
+    {
+      "type": "assert",
+      "instruction": "最上面一条订单的状态已显示为「已取消」"
+    }
+  ],
+  "updatedAt": "2026-10-21T09:39:21.104Z"
+}

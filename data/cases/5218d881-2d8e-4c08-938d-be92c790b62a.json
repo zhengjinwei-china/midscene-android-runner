@@ -1,0 +1,26 @@
+{
+  "id": "5218d881-2d8e-4c08-938d-be92c790b62a",
+  "name": "打开App进入美食场景且展示正常",
+  "raw": "操作：打开建行生活app\n断言：首页已加载，无明显闪退或白屏\n操作：点击首页金刚区的美食icon\n断言：已成功进入美食场景，页面展示正常，有商户或内容",
+  "steps": [
+    {
+      "type": "action",
+      "instruction": "打开建行生活app"
+    },
+    {
+      "type": "assert",
+      "instruction": "首页已加载，无明显闪退或白屏"
+    },
+    {
+      "type": "action",
+      "instruction": "点击首页金刚区的美食icon"
+    },
+    {
+      "type": "assert",
+      "instruction": "已成功进入美食场景，页面展示正常，有商户或内容"
+    }
+  ],
+  "sourceCaseId": "08cae70a-9ac9-48c9-9dc3-ab558bdfd4cd",
+  "splitOrder": 1,
+  "updatedAt": "2026-10-30T02:45:59.324Z"
+}

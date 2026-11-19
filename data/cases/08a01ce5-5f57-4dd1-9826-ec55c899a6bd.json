@@ -1,0 +1,144 @@
+{
+  "id": "08a01ce5-5f57-4dd1-9826-ec55c899a6bd",
+  "name": "建行生活出行场景回归",
+  "raw": "-打开建行生活app -在金刚区位置选择出行icon -进入之后选择骑行 -点击哈啰还车 -进入哈啰界面后点击上方骑行卡优惠购广告 -选择购买7天不限次卡 -跳转至收银台后返回到出行频道首页 -再点击青桔骑行 -点击我的券包 -返回出行频道首页 -点击打车 -选择高德打车 -点击立即打车 -进入高德打车界面，显示正常后再点击滴滴出行 -点击去打车 -进入滴滴出行界面，显示正常后再点击曹操出行 -点击去打车 -曹操出行界面加载正常后 结束",
+  "steps": [
+    {
+      "type": "action",
+      "instruction": "在桌面点击建行生活 App 图标打开应用"
+    },
+    {
+      "type": "assert",
+      "instruction": "建行生活首页已加载，金刚区入口可见，无明显闪退或白屏"
+    },
+    {
+      "type": "action",
+      "instruction": "在首页金刚区点击「出行」图标"
+    },
+    {
+      "type": "assert",
+      "instruction": "已成功进入出行频道首页，页面展示正常，无空白或加载失败提示"
+    },
+    {
+      "type": "action",
+      "instruction": "在出行频道点击「骑行」"
+    },
+    {
+      "type": "assert",
+      "instruction": "已进入骑行服务页面，展示哈啰、青桔等骑行选项，页面正常"
+    },
+    {
+      "type": "action",
+      "instruction": "在骑行页面点击「哈啰还车」"
+    },
+    {
+      "type": "assert",
+      "instruction": "已进入哈啰出行界面，页面加载正常，无错误提示"
+    },
+    {
+      "type": "action",
+      "instruction": "在哈啰界面上方点击「骑行卡优惠购」广告"
+    },
+    {
+      "type": "assert",
+      "instruction": "已进入骑行卡购买页面，展示可选卡种，页面正常"
+    },
+    {
+      "type": "action",
+      "instruction": "在骑行卡列表中选择「7天不限次卡」"
+    },
+    {
+      "type": "assert",
+      "instruction": "进入购买确认或收银台页面，页面正常"
+    },
+    {
+      "type": "action",
+      "instruction": "在收银台页面点击返回，回到出行频道首页"
+    },
+    {
+      "type": "assert",
+      "instruction": "已返回出行频道首页，页面显示正常"
+    },
+    {
+      "type": "action",
+      "instruction": "在出行频道点击「青桔骑行」"
+    },
+    {
+      "type": "assert",
+      "instruction": "已进入青桔骑行界面，页面加载正常"
+    },
+    {
+      "type": "action",
+      "instruction": "在青桔骑行界面点击「我的券包」"
+    },
+    {
+      "type": "assert",
+      "instruction": "已进入我的券包页面，展示优惠券列表，页面正常"
+    },
+    {
+      "type": "action",
+      "instruction": "在券包页面点击返回，回到出行频道首页"
+    },
+    {
+      "type": "assert",
+      "instruction": "已返回出行频道首页，页面显示正常"
+    },
+    {
+      "type": "action",
+      "instruction": "在出行频道点击「打车」"
+    },
+    {
+      "type": "assert",
+      "instruction": "已进入打车服务页面，展示高德、滴滴、曹操等打车选项，页面正常"
+    },
+    {
+      "type": "action",
+      "instruction": "在打车页面选择「高德打车」"
+    },
+    {
+      "type": "assert",
+      "instruction": "已进入高德打车界面，页面加载正常"
+    },
+    {
+      "type": "action",
+      "instruction": "在高德打车界面点击「立即打车」"
+    },
+    {
+      "type": "assert",
+      "instruction": "已进入高德打车叫车流程或叫车界面，页面显示正常"
+    },
+    {
+      "type": "action",
+      "instruction": "返回打车选择页面，点击「滴滴出行」"
+    },
+    {
+      "type": "assert",
+      "instruction": "已进入滴滴出行界面，页面加载正常"
+    },
+    {
+      "type": "action",
+      "instruction": "在滴滴出行界面点击「去打车」"
+    },
+    {
+      "type": "assert",
+      "instruction": "已进入滴滴出行叫车界面，页面显示正常"
+    },
+    {
+      "type": "action",
+      "instruction": "返回打车选择页面，点击「曹操出行」"
+    },
+    {
+      "type": "assert",
+      "instruction": "已进入曹操出行界面，页面加载正常"
+    },
+    {
+      "type": "action",
+      "instruction": "在曹操出行界面点击「去打车」"
+    },
+    {
+      "type": "assert",
+      "instruction": "曹操出行叫车界面加载正常，无空白或错误提示，流程结束"
+    }
+  ],
+  "updatedAt": "2026-11-17T06:15:19.723Z"
+}

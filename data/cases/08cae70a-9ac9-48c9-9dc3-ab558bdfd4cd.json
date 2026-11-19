@@ -1,0 +1,112 @@
+{
+  "id": "08cae70a-9ac9-48c9-9dc3-ab558bdfd4cd",
+  "name": "建行生活美食频道与门店详情测试",
+  "raw": "-打开建行生活app -进入首页金刚区的美食icon -进入美食场景后点击中餐icon，检查每个门店标签是否是中餐，然后返回美食频道-再进入美食好券icon，跳转界面正常后，点击返回-向下滑动，商户展示都正常-点击筛选栏，附近，1000米，可以正常筛选结果-再筛选买单，看是否能筛选出买单标签的商户-搜索麦当劳-进入任意麦当劳门店 -加载出商户详情页后点击任意图片能正常打开，然后关闭回到门店详情页-点击周边可以展示周边商户 -向下滑动可以看到商家信息、和周边推荐门店，均没有异常的文字和图片",
+  "steps": [
+    {
+      "type": "action",
+      "instruction": "打开建行生活app"
+    },
+    {
+      "type": "assert",
+      "instruction": "首页已加载，无明显闪退或白屏"
+    },
+    {
+      "type": "action",
+      "instruction": "点击首页金刚区的美食icon"
+    },
+    {
+      "type": "assert",
+      "instruction": "已成功进入美食场景，页面展示正常，有商户或内容"
+    },
+    {
+      "type": "action",
+      "instruction": "点击中餐icon"
+    },
+    {
+      "type": "assert",
+      "instruction": "所有门店标签均为中餐"
+    },
+    {
+      "type": "action",
+      "instruction": "返回美食频道，点击美食好券icon"
+    },
+    {
+      "type": "assert",
+      "instruction": "跳转界面正常，无白屏或错误提示"
+    },
+    {
+      "type": "action",
+      "instruction": "点击返回，向下滑动页面"
+    },
+    {
+      "type": "assert",
+      "instruction": "商户展示都正常，无异常文字和图片"
+    },
+    {
+      "type": "action",
+      "instruction": "点击筛选栏，选择附近，1000米"
+    },
+    {
+      "type": "assert",
+      "instruction": "可以正常筛选结果，展示附近1000米内的商户"
+    },
+    {
+      "type": "action",
+      "instruction": "筛选买单"
+    },
+    {
+      "type": "assert",
+      "instruction": "筛选出买单标签的商户，商户带有买单标签"
+    },
+    {
+      "type": "action",
+      "instruction": "搜索麦当劳"
+    },
+    {
+      "type": "assert",
+      "instruction": "搜索结果中有麦当劳相关商户"
+    },
+    {
+      "type": "action",
+      "instruction": "进入任意麦当劳门店"
+    },
+    {
+      "type": "assert",
+      "instruction": "商户详情页已加载"
+    },
+    {
+      "type": "action",
+      "instruction": "点击任意图片"
+    },
+    {
+      "type": "assert",
+      "instruction": "图片能正常打开"
+    },
+    {
+      "type": "action",
+      "instruction": "关闭回到门店详情页"
+    },
+    {
+      "type": "assert",
+      "instruction": "回到门店详情页"
+    },
+    {
+      "type": "action",
+      "instruction": "点击周边"
+    },
+    {
+      "type": "assert",
+      "instruction": "展示周边商户列表"
+    },
+    {
+      "type": "action",
+      "instruction": "向下滑动页面"
+    },
+    {
+      "type": "assert",
+      "instruction": "商家信息和周边推荐门店均没有异常的文字和图片"
+    }
+  ],
+  "updatedAt": "2026-10-30T02:39:26.405Z"
+}

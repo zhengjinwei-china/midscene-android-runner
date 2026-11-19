@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Midscene 案例执行</title>
+    <link rel="stylesheet" href="/app.css?v=15" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Midscene 案例执行</h1>
+        <p id="status">正在检查模型配置…</p>
+        <button id="restart-server" type="button" class="secondary reload-env" title="修改 .env 后点此，无需重启终端">
+          重新加载 .env 配置
+        </button>
+      </div>
+      <div class="header-actions">
+        <button id="open-prompts" type="button" class="secondary">提示词管理</button>
+        <div class="menu">
+          <button id="system-menu" type="button" aria-expanded="false" aria-controls="system-panel">系统配置</button>
+          <div id="system-panel" class="menu-panel" hidden>
+            <button id="open-model" type="button" class="menu-item">大模型</button>
+          </div>
+        </div>
+        <button id="refresh" type="button">刷新设备</button>
+      </div>
+    </header>
+    <dialog id="prompt-dialog">
+      <form id="prompt-form" method="dialog">
+        <h2>提示词管理</h2>
+        <label>
+          全局提示词
+          <span class="muted">执行案例时交给 Midscene，用于处理弹窗、权限、广告等通用干扰。</span>
+          <textarea id="global-prompt" rows="6" placeholder="例：出现系统权限、隐私协议、更新或广告弹窗时，优先点允许、同意或关闭，不要离开被测应用主流程。"></textarea>
+        </label>
+        <label>
+          拆分案例提示词
+          <span class="muted">拆分时长模型使用的系统提示词。清空后保存会恢复内置默认。</span>
+          <textarea id="split-prompt" rows="10"></textarea>
+        </label>
+        <p id="prompt-message" class="muted"></p>
+        <div class="row">
+          <button type="submit">保存</button>
+          <button type="button" class="secondary" id="close-prompts">取消</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="model-dialog">
+      <form id="model-form" method="dialog">
+        <h2>大模型</h2>
+        <p class="muted">案例理解用 LongCat 等文本模型即可。手机执行须单独配置视觉模型（不能用 LongCat）。密钥留空表示不修改已保存的值。</p>
+        <fieldset>
+          <legend>案例理解（如 LongCat）</legend>
+          <label>接口地址<input name="PLANNER_MODEL_BASE_URL" autocomplete="off" placeholder="https://api.example/v1" /></label>
+          <label>密钥<input name="PLANNER_MODEL_API_KEY" type="password" autocomplete="off" placeholder="留空则不修改" /></label>
+          <label>模型名<input name="PLANNER_MODEL_NAME" autocomplete="off" /></label>
+        </fieldset>
+        <fieldset>
+          <legend>手机执行（Midscene 视觉模型）</legend>
+          <label>接口地址<input name="MIDSCENE_MODEL_BASE_URL" autocomplete="off" placeholder="按厂商文档，如 DashScope /v1" /></label>
+          <label>密钥<input name="MIDSCENE_MODEL_API_KEY" type="password" autocomplete="off" placeholder="留空则不修改" /></label>
+          <label>模型名<input name="MIDSCENE_MODEL_NAME" autocomplete="off" placeholder="如 qwen3.7-plus" /></label>
+          <label>模型家族<input name="MIDSCENE_MODEL_FAMILY" autocomplete="off" placeholder="如 qwen3、doubao-seed" /></label>
+        </fieldset>
+        <p id="model-message" class="muted"></p>
+        <div class="row">
+          <button type="submit">保存</button>
+          <button type="button" class="secondary" id="close-model">取消</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="case-dialog" class="case-dialog">
+      <form id="case-form" method="dialog">
+        <h2>编辑案例</h2>
+        <p class="muted">可改名称、原文和拆解后的步骤；保存后直接用于执行，无需重新理解。</p>
+        <label>名称<input name="name" id="case-edit-name" autocomplete="off" required /></label>
+        <label>自然语言原文<textarea name="raw" id="case-edit-raw" rows="4" required></textarea></label>
+        <label>Android 包名（可选）<input name="packageName" id="case-edit-package" autocomplete="off" placeholder="留空则通过桌面图标打开" /></label>
+        <fieldset class="case-steps-field">
+          <legend>执行步骤</legend>
+          <p class="muted case-steps-hint">勾选某步的「接续跳过」后，批量执行且本条不是第一条时会跳过该步；单独执行本条仍逐步执行。</p>
+          <div id="case-edit-steps" class="case-edit-steps"></div>
+          <button type="button" class="secondary" id="case-edit-add-step">添加步骤</button>
+        </fieldset>
+        <p id="case-edit-message" class="muted"></p>
+        <div class="row">
+          <button type="submit">保存</button>
+          <button type="button" class="secondary" id="close-case">取消</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="batch-order-dialog" class="batch-order-dialog">
+      <div class="batch-order-inner">
+        <h2>批量执行顺序</h2>
+        <p class="muted">从上到下为执行顺序。仅显示案例名称，可用 ↑ ↓ 调整。后一条案例可在编辑里为各步勾选「接续跳过」，以接在上一条结束界面继续。</p>
+        <ol id="batch-order-list" class="batch-order-list"></ol>
+        <div class="row batch-order-actions">
+          <button type="button" id="batch-order-start">开始执行</button>
+          <button type="button" class="secondary" id="batch-order-cancel">取消</button>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="history-dialog" class="history-dialog">
+      <div class="history-dialog-inner">
+        <h2 id="history-dialog-title">执行记录</h2>
+        <p id="history-dialog-hint" class="muted"></p>
+        <div id="history-list" class="history-list"></div>
+        <div class="row history-dialog-actions">
+          <button type="button" class="secondary" id="close-history">关闭</button>
+        </div>
+      </div>
+    </dialog>
+    <main class="layout-main">
+      <section class="panel-run" aria-label="执行">
+        <div class="panel-run-head">
+          <h2>执行</h2>
+          <button id="stop-run" type="button" class="secondary danger" disabled>终止执行</button>
+        </div>
+        <div id="devices" class="list"></div>
+        <div id="log" class="log">还没有运行。</div>
+        <p id="report-link" class="report-link"></p>
+      </section>
+      <section class="panel-workspace" aria-label="案例">
+        <p id="workspace-stats" class="workspace-stats" aria-live="polite">
+          <span>历史执行案例数：<strong id="historical-exec-count">—</strong></span>
+          <span class="workspace-stats-sep" aria-hidden="true">·</span>
+          <span>历史执行步骤数：<strong id="historical-step-count">—</strong></span>
+        </p>
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab" id="tab-original" role="tab" aria-selected="true" aria-controls="panel-original">原始案例</button>
+          <button type="button" class="tab" id="tab-split" role="tab" aria-selected="false" aria-controls="panel-split">拆分子案例</button>
+        </div>
+        <div id="panel-original" role="tabpanel">
+          <h2>自然语言案例</h2>
+          <textarea id="raw" rows="6" placeholder="用自然语言写下步骤和期望结果。多个案例用单独一行的 --- 分开。&#10;&#10;例：打开设置，进入 WLAN。确认页面上能看到 WLAN 开关。"></textarea>
+          <div class="row">
+            <button id="import" type="button">理解并保存</button>
+          </div>
+          <div id="cases" class="list"></div>
+          <div class="row run-actions">
+            <button id="run-one" type="button">执行选中的一条</button>
+            <button id="run-batch" type="button">批量执行勾选</button>
+          </div>
+        </div>
+        <div id="panel-split" role="tabpanel" hidden>
+          <h2>拆分子案例</h2>
+          <p class="muted">按原案例分组，组内顺序即执行顺序。勾选后直接按该顺序执行或导出。</p>
+          <div id="split-groups" class="list"></div>
+          <div class="row run-actions">
+            <button id="run-split-checked" type="button">执行勾选</button>
+            <button id="export-split-checked" type="button" class="secondary">导出勾选</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js?v=13" type="module"></script>
+  </body>
+</html>
